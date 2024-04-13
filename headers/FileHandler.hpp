@@ -4,6 +4,6 @@
 #include "Players.hpp"
 
 Players& loadFile(const char* fileName = nullptr);
-void saveFile(const char* fileName = nullptr, Players& players);
+void saveFile(Players& players, const char* fileName = nullptr);
 
 #endif

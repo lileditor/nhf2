@@ -4,6 +4,7 @@
 #include "headers/CardsRender.hpp"
 #include "headers/FileHandler.hpp"
 #include "headers/Players.hpp"
+#include "headers/StartMenu.hpp"
 
 int main() {
     /*
@@ -11,7 +12,7 @@ int main() {
         menu();
         game();
     */
-    Players *players = loadFile("state.txt");
+    Players players = loadFile("state.txt");
     StartMenu(players);
     /*Card* cards = new Card[52];
     generateCards(cards);

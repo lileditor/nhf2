@@ -3,6 +3,6 @@
 
 #include "Players.hpp"
 
-void startMenu(Players &players);
+void StartMenu(Players &players);
 
 #endif

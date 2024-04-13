@@ -12,28 +12,41 @@ class Player {
         balance = DEFAULT_BALANCE;
     }
 
+    Player& operator=(const Player& other) {
+        if (this != &other) {
+            delete[] name;
+            name = new char[strlen(other.name) + 1];
+            strcpy(name, other.name);
+            balance = other.balance;
+        }
+        return *this;
+    }
+
     ~Player() {
         delete[] name;
     }
-}
+};
 
 class Players {
     Player* players;
     int size;
     public:
-    Players(int count) {
-        players = new Player[count];
+    Players() {
+        players = new Player[0];
+        size = 0;
+    }
+    Players(const char **names, int count) {
+        for (int i = 0; i < count; i++) {
+            players = new Player(names[i]);
+            players++;
+        }
         size = count;
     }
 
     void CreatePlayer(const char* name);
 
     ~Players() {
-        for (int i = 0; i < size; i++) {
-            delete[] name[i];
-        }
-        delete[] *name;
-        delete[] balance;
+        delete[] players;
     }
 };
 

@@ -1,6 +1,7 @@
-#include "headers/FileHandler.hpp"
 #include <iostream>
 #include <fstream>
+#include "headers/FileHandler.hpp"
+#include "headers/Players.hpp"
 
 void saveFile(const char* fileName, Players& players) {
     if (fileName == nullptr) {
@@ -22,6 +23,6 @@ Players& loadFile(const char* fileName) {
     if (!file.is_open()) {
         throw std::runtime_error("File not found");
     }
-
-    file >> 
+    Players *players = new Players();
+    return *players;
 }
