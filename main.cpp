@@ -2,9 +2,18 @@
 #include "headers/Cards.hpp"
 #include "headers/Hands.hpp"
 #include "headers/CardsRender.hpp"
+#include "headers/FileHandler.hpp"
+#include "headers/Players.hpp"
 
 int main() {
-    Card* cards = new Card[52];
+    /*
+        loadfile();
+        menu();
+        game();
+    */
+    Players *players = loadFile("state.txt");
+    StartMenu(players);
+    /*Card* cards = new Card[52];
     generateCards(cards);
     shuffeCards(cards);
     
@@ -18,4 +27,5 @@ int main() {
     CardsRender::renderCards(player);
 
     delete[] cards;
+    */
 } 
