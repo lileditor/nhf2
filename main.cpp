@@ -4,6 +4,11 @@
 #include "headers/CardsRender.hpp"
 
 int main() {
+    /*
+        loadfile();
+        menu();
+        game();
+    */
     Card* cards = new Card[52];
     generateCards(cards);
     shuffeCards(cards);
