@@ -2,6 +2,9 @@
 #include "headers/Cards.hpp"
 #include "headers/Hands.hpp"
 #include "headers/CardsRender.hpp"
+#include "headers/FileHandler.hpp"
+#include "headers/Players.hpp"
+#include "headers/StartMenu.hpp"
 
 int main() {
     /*
@@ -9,7 +12,9 @@ int main() {
         menu();
         game();
     */
-    Card* cards = new Card[52];
+    Players players = loadFile("state.txt");
+    StartMenu(players);
+    /*Card* cards = new Card[52];
     generateCards(cards);
     shuffeCards(cards);
     
@@ -23,4 +28,5 @@ int main() {
     CardsRender::renderCards(player);
 
     delete[] cards;
+    */
 } 
