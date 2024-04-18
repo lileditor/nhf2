@@ -4,7 +4,7 @@
 #include <cstring>
 
 class Player {
-    char* name;
+    char* name = nullptr;
     int balance;
     public:
     Player(const char* name) {
@@ -23,16 +23,17 @@ class Player {
     }
 
     ~Player() {
-        delete[] name;
+        if (name != nullptr)
+            delete[] name;
     }
 };
 
 class Players {
-    Player* players;
+    Player* players = nullptr;
     int size;
     public:
     Players() {
-        players = new Player[0];
+        players = new Player("Default");
         size = 0;
     }
     Players(const char **names, int count) {
@@ -46,7 +47,8 @@ class Players {
     void CreatePlayer(const char* name);
 
     ~Players() {
-        delete[] players;
+        if (players != nullptr)
+            delete[] players;
     }
 };
 
