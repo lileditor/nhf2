@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "headers/FileHandler.hpp"
-#include "headers/Players.hpp"
+#include "FileHandler.hpp"
+#include "Players.hpp"
 
 void saveFile(const char* fileName, Players& players) {
     if (fileName == nullptr) {

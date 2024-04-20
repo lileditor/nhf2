@@ -1,6 +1,6 @@
 #include <iostream>
-#include "headers/Hands.hpp"
-#include "headers/Cards.hpp"
+#include "Hands.hpp"
+#include "Cards.hpp"
 
 void Hand::addCard(Card c) {
     cards[size++] = c;

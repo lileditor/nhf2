@@ -1,5 +1,5 @@
 #include <iostream>
-#include "headers/StartMenu.hpp"
+#include "StartMenu.hpp"
 
 void StartMenu(Players &players) {
     int option = 0;

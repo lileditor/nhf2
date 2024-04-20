@@ -1,10 +1,10 @@
 #include <iostream>
-#include "headers/Cards.hpp"
-#include "headers/Hands.hpp"
-#include "headers/CardsRender.hpp"
-#include "headers/FileHandler.hpp"
-#include "headers/Players.hpp"
-#include "headers/StartMenu.hpp"
+#include "Cards.hpp"
+#include "Hands.hpp"
+#include "CardsRender.hpp"
+#include "FileHandler.hpp"
+#include "Players.hpp"
+#include "StartMenu.hpp"
 
 int main() {
     /*

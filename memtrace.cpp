@@ -24,7 +24,7 @@ typo:       2019.
 
 #ifdef MEMTRACE
 #define FROM_MEMTRACE_CPP
-#include "headers/memtrace.h"
+#include "memtrace.h"
 
 #define FMALLOC 0
 #define FCALLOC 1

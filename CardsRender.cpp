@@ -1,8 +1,8 @@
 #include <iostream>
-#include "headers/CardsRender.hpp"
-#include "headers/Cards.hpp"
+#include "CardsRender.hpp"
+#include "Cards.hpp"
 
-void CardsRender::renderCards(Hand* hand) {
+void Renderer::renderCards(Hand* hand) {
     for (int i = 0; i < hand->getSize(); i++) {
         switch (hand->getCards()[i].getSuit()) {
             case Suit::Spades:

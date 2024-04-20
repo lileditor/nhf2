@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "headers/Cards.hpp"
+#include "Cards.hpp"
 
 void generateCards(Card *cards) {
     for (int i = 0; i < 52; i++) {

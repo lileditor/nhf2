@@ -4,9 +4,8 @@
 #include "Cards.hpp"
 #include "Hands.hpp"
 
-class CardsRender {
-public:
-    static void renderCards(Hand* hand);
-};
+namespace Renderer {
+    void renderCards(Hand* hand);
+}
 
 #endif
