@@ -19,6 +19,10 @@ enum Rank {
   Ace
 };
 
+/**
+ * @brief 
+ * Ez a kártyák funkciósit tartalmazza.
+ */
 class Card {
   protected:
   Suit suit;

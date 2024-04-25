@@ -5,6 +5,10 @@
 
 #include "Hands.hpp"
 
+/**
+ * @brief 
+ * Ez a játékos adatait tartalmazza.
+ */
 class Player {
     char* name = nullptr;
     int balance;
@@ -34,6 +38,10 @@ class Player {
     }
 };
 
+/**
+ * @brief 
+ * Ez az összes játékost kezeli és ebbe történik a beolvasás. 
+ */
 class Players {
     Player* players = nullptr;
     int size;

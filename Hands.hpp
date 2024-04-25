@@ -2,6 +2,10 @@
 #define HANDS_HPP
 #include "Cards.hpp"
 
+/**
+ * @brief 
+ * Ez a kártyákat tudja kezelni ami éppen nálad van.
+ */
 class Hand {
     Card *cards;
     int size;

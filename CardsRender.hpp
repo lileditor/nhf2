@@ -4,6 +4,10 @@
 #include "Cards.hpp"
 #include "Hands.hpp"
 
+/**
+ * @brief 
+ * Ez a kártyák kiírását valósítja meg
+ */
 namespace Renderer {
     void renderCards(Hand* hand);
 }
