@@ -20,22 +20,28 @@ enum Rank {
 };
 
 /**
- * @brief 
+ * @brief
  * Ez a kártyák funkciósit tartalmazza.
  */
 class Card {
-  protected:
+protected:
   Suit suit;
   Rank rank;
+
 public:
-  Card() {};
+  Card(){};
   Card(Suit s, Rank r) : suit(s), rank(r) {}
   void setSuit(Suit s) { suit = s; };
   void setRank(Rank r) { rank = r; };
   Suit getSuit() const { return suit; }
   Rank getRank() const { return rank; }
-  int getValue() const { return rank > 8 ? rank == Ace ? 11 : 10 : static_cast<int>(rank) + 2; }
-  void setCard(Suit s, Rank r) { suit = s; rank = r; }
+  int getValue() const {
+    return rank > 8 ? rank == Ace ? 11 : 10 : static_cast<int>(rank) + 2;
+  }
+  void setCard(Suit s, Rank r) {
+    suit = s;
+    rank = r;
+  }
 };
 
 void generateCards(Card *cards);
