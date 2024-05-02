@@ -1,7 +1,6 @@
 #include "Cards.hpp"
 #include "FileHandler.hpp"
 #include "gtest_lite.h"
-#include <iostream>
 
 void Test() {
   TEST(StartMenu, "no file") { EXPECT_ANY_THROW(loadFile()); }
@@ -17,5 +16,7 @@ void Test() {
     EXPECT_EQ(hand.getScore(), 10);
   }
   END;
+  TEST(Card, "Score") END;
+  TEST(Card, "Konstuction") END;
   // és akkor itt lesz a többi teszt is
 }
