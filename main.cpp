@@ -4,7 +4,7 @@
 #include "CardsRender.hpp"
 #include "FileHandler.hpp"
 #include "Players.hpp"
-#include "StartMenu.hpp"
+#include "Menu.hpp"
 
 int main() {
     /*

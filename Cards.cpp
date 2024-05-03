@@ -8,9 +8,10 @@ void generateCards(Card *cards) {
 }
 
 void shuffeCards(Card *cards) {
-  srand(time(nullptr));
+  std::random_device generator;
+  std::uniform_real_distribution<float> distribution(0, 51);
   for (int i = 0; i < 52; i++) {
-    int index = rand() % 52;
+    int index = distribution(generator);
     Card tmp = cards[i];
     cards[i] = cards[index];
     cards[index] = tmp;

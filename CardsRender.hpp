@@ -8,7 +8,7 @@
  * Ez a kártyák kiírását valósítja meg
  */
 namespace Renderer {
-void renderCards(Hand *hand);
+    void renderCards(Hand *hand);
 }
 
 #endif

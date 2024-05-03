@@ -1,5 +1,6 @@
 #ifndef CARDS_HPP
 #define CARDS_HPP
+#include <map>
 
 enum Suit { Clubs, Diamonds, Hearts, Spades };
 
@@ -18,6 +19,9 @@ enum Rank {
   King,
   Ace
 };
+
+static std::map<Rank, const char*> RANKS = {{Two, "2"}, {Three, "3"}, {Four, "4"}, {Five, "5"}, {Six, "6"}, {Seven, "7"}, {Eight, "8"}, {Nine, "9"}, {Ten, "10"}, {Jack, "Jack"}, {Queen, "Queen"}, {King, "King"}, {Ace, "Ace"}};
+static std::map<Suit, const char*> SUITS = {{Clubs, "Clubs"}, {Diamonds, "Diamonds"}, {Hearts, "Hearts"}, {Spades, "Spades"}};
 
 /**
  * @brief
