@@ -21,6 +21,7 @@ class Player {
         hand = new Hand();
         balance = DEFAULT_BALANCE;
     }
+    Player(const char* n, int b);
 
     char* getName() const { return name; }
     int getBalance() const { return balance; }
@@ -59,6 +60,9 @@ class Players {
     }
     void CreatePlayer(const char* name);
     int GetSize() const { return size; }
+    void addPlayer(Player* player) {
+        players[size++] = player;
+    }
 
     ~Players() {
         if (players == nullptr) return;

@@ -7,6 +7,13 @@ void Player::freePlayer(Player* player) {
     delete player->hand;
 }
 
+Player::Player(const char* n, int b) {
+    name = new char[strlen(n) + 1];
+    strcpy(name, n);
+    hand = new Hand();
+    balance = b;
+}
+
 Player& Player::operator=(const Player& other) {
     if (this != &other) {
         delete name;
@@ -27,10 +34,8 @@ void Players::CreatePlayer(const char* name) {
 }
 
 Players::Players()  {
-    players = new Player*[5];
-    Player *player = new Player("Default");
-    players[0] = player;
-    size = 1;
+    players = new Player*[35];
+    size = 0;
 }
 
 void CreateNewPlayer(Players &players) {

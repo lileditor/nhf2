@@ -14,7 +14,7 @@ void PlayersMenu(Players &players);
 
 void ChoosePlayer(Players &players);
 
-void GameMenu(Player &player);
+void GameMenu(Players &players, Player &player);
 
 void EndMenu(Players &players);
 

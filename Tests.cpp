@@ -3,9 +3,9 @@
 #include "gtest_lite.h"
 
 void Test() {
-  TEST(StartMenu, "no file") { EXPECT_ANY_THROW(loadFile()); }
+  TEST(loadFile, "no file") { EXPECT_ANY_THROW(loadFile()); }
   END;
-  TEST(StartMenu, "file included") { EXPECT_NO_THROW(loadFile("state.txt")); }
+  TEST(loadFile, "file included") { EXPECT_NO_THROW(loadFile("state.txt")); }
   END;
   TEST(Hand, "Konstuction") {
     Hand hand;

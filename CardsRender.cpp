@@ -4,15 +4,15 @@
 #include "Cards.hpp"
 
 /*
-"----------" "----------" "----------" "----------" "----------"
-"| %s     |" "| %s     |" "| %s     |" "| %s     |" "|        |"
-"|    #   |" "|    #   |" "|  #   # |" "|    #   |" "|        |"
-"|   ###  |" "|   ###  |" "| ##  ## |" "|  ##### |" "|        |"
-"|  ##### |" "|  ##### |" "| ###### |" "|  ##### |" "|        |"
-"|   ###  |" "|  # # # |" "|  ####  |" "|  ##### |" "|        |"
-"|    #   |" "|    #   |" "|   ##   |" "|    #   |" "|        |"
-"|     %s |" "|     %s |" "|     %s |" "|     %s |" "|        |"
-"----------" "----------" "----------" "----------" "----------"
+"----------" "----------" "----------" "----------"
+"| %s     |" "| %s     |" "| %s     |" "| %s     |"
+"|    #   |" "|    #   |" "|  #   # |" "|    #   |"
+"|   ###  |" "|   ###  |" "| ##  ## |" "|  ##### |"
+"|  ##### |" "|  ##### |" "| ###### |" "|  ##### |"
+"|   ###  |" "|  # # # |" "|  ####  |" "|  ##### |"
+"|    #   |" "|    #   |" "|   ##   |" "|    #   |"
+"|     %s |" "|     %s |" "|     %s |" "|     %s |"
+"----------" "----------" "----------" "----------"
 */
 
 const char* ClubsString[11] = {
@@ -77,9 +77,14 @@ void Renderer::renderCards(Hand* hand) {
 std::string Renderer::getCardsString(Hand *hand) {
     std::string cards = "";
     for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < hand->getSize(); j++) {
-            cards += getCardStringFormLine(hand->getCards()[j], i);
-            cards += " ";
+        if (hand->getSize() == 1) {
+            cards += getCardStringFormLine(hand->getCards()[0], i);
+        } else {
+            cards += getCardStringFormLine(hand->getCards()[0], i);
+            for (int j = 1; j < hand->getSize(); j++) {
+                cards += " ";
+                cards += getCardStringFormLine(hand->getCards()[j], i);
+            }
         }
         cards += "\n";
     }
