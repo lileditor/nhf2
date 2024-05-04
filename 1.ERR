@@ -1,12 +1,12 @@
 Nem letezo, vagy mar felszabaditott adat felszabaditasa:
-	Pointer:	00000246deed7bd0
+	Pointer:	000001982ca87bd0
 	Felszabaditas:	delete? @ ?:0
-Dump (addr: 00000246deed7bd0 kanari hossz: 64):
+Dump (addr: 000001982ca87bd0 kanari hossz: 64):
 0000:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
 0010:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
 0020:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
 0030:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
-0040:  00 00 00 00 58 58 58 58  b0 7a ed de 46 02 00 00  ....XXXX.z..F...
+0040:  00 00 00 00 6f 6f 6f 6f  b0 7a a8 2c 98 01 00 00  ....oooo.z.,....
 0050:  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ................
-0060:  0c 00 00 00 46 02 00 00  5c 37 34 ef f7 7f 00 00  ....F...\74.....
+0060:  0c 00 00 00 98 01 00 00  7c 37 b5 3f f6 7f 00 00  ........|7.?....
 0070:  4b 4b 4b 4b 4b 4b 4b 4b  4b 4b 4b 4b 4b 4b 4b 4b  KKKKKKKKKKKKKKKK

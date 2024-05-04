@@ -18,7 +18,7 @@ void saveFile(Players& players, const char* fileName) {
         file.write(players[i].getName(), strlen(players[i].getName()) + 1);
         file << " " << players[i].getBalance() << " " << players[i].getHand()->getSize();
         for (int j = 0; j < players[i].getHand()->getSize(); j++) {
-            file << SUITS[players[i].getHand()->getCards()[j].getSuit()] << " " << RANKS[players[i].getHand()->getCards()[j].getRank()] << "\n";
+            file << SUITS[players[i].getHand()->getCards()[j]->getSuit()] << " " << RANKS[players[i].getHand()->getCards()[j]->getRank()] << "\n";
         }
     }
     file.close();

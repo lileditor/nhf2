@@ -23,7 +23,7 @@ public:
 
   int getSize() const { return size; }
 
-  Card *getCards() const { return *cards; }
+  Card **getCards() const { return cards; }
 
   ~Hand() { delete[] cards; }
 };
