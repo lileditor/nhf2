@@ -12,6 +12,12 @@ int main() {
         menu();
         game();
     */
-    Players players = loadFile("state.txt");
-    StartMenu(players);
+    /*Players players = loadFile("state.txt");
+    StartMenu(players);*/
+    Hand *hand = new Hand();
+    Card *card = new Card(Spades, Ten);
+    hand->addCard(card);
+    Renderer::renderCards(hand);
+    delete hand;
+    delete card;
 } 

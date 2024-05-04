@@ -10,8 +10,7 @@ void Test() {
   TEST(Hand, "Konstuction") {
     Hand hand;
     EXPECT_EQ(hand.getScore(), 0);
-    Card card;
-    card.setCard(Spades, Jack);
+    Card *card = new Card(Spades, Jack);
     hand.addCard(card);
     EXPECT_EQ(hand.getScore(), 10);
   }

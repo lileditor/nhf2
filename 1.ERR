@@ -1,19 +1,12 @@
 Nem letezo, vagy mar felszabaditott adat felszabaditasa:
-	Pointer:	0000025886e27bc0
+	Pointer:	00000246deed7bd0
 	Felszabaditas:	delete? @ ?:0
-Dump (addr: 0000025886e27bc0 kanari hossz: 64):
+Dump (addr: 00000246deed7bd0 kanari hossz: 64):
 0000:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
 0010:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
 0020:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
 0030:  6b 6b 6b 6b 6b 6b 6b 6b  6b 6b 6b 6b 6b 6b 6b 6b  kkkkkkkkkkkkkkkk
-0040:  00 00 00 00 92 92 92 92  a0 7a e2 86 58 02 00 00  .........z..X...
+0040:  00 00 00 00 58 58 58 58  b0 7a ed de 46 02 00 00  ....XXXX.z..F...
 0050:  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ................
-0060:  0c 00 00 00 58 02 00 00  56 27 be 4e f7 7f 00 00  ....X...V'.N....
+0060:  0c 00 00 00 46 02 00 00  5c 37 34 ef f7 7f 00 00  ....F...\74.....
 0070:  4b 4b 4b 4b 4b 4b 4b 4b  4b 4b 4b 4b 4b 4b 4b 4b  KKKKKKKKKKKKKKKK
-eaa0    8 byte new[] @ ?:0
-	0000025886e0eb30   16 byte new @ ?:0
-	0000025886e0ebd0   80 byte new[] @ ?:0
-	0000025886e0ecb0   24 byte new @ ?:0
-	0000025886e0ed50    4 byte new[] @ ?:0
-	0000025886e0ede0   16 byte new @ ?:0
-	0000025886e0ee80   80 byte new[] @ ?:0
