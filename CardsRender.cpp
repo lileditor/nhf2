@@ -8,24 +8,106 @@ void Renderer::renderCards(Hand* hand) {
         switch (hand->getCards()[i].getSuit()) {
             case Spades: {
                 if (hand->getCards()[i].getRank() == Ten) {
-                    std::string card = "----------\n" + Renderer::format("| %s     |\n", RANKS[hand->getCards()[i].getRank()]) + "|    #   |\n" + "|   ###  |\n" + "|  ##### |\n" + "|  # # # |\n" + "|    #   |\n" + Renderer::format("|     %s |\n", RANKS[hand->getCards()[i].getRank()]) + "----------\n";
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s     |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|    #   |\n";
+                    card += "|   ###  |\n";
+                    card += "|  ##### |\n";
+                    card += "|  # # # |\n";
+                    card += "|    #   |\n";
+                    card += Renderer::format("|     %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
                     std::cout << card;
                 } else {
-                    std::string card = "----------\n" + Renderer::format("| %s      |\n", RANKS[hand->getCards()[i].getRank()]) + "|    #   |\n" + "|   ###  |\n" + "|  ##### |\n" + "|  # # # |\n" + "|    #   |\n" + Renderer::format("|      %s |\n", RANKS[hand->getCards()[i].getRank()]) + "----------\n";
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s      |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|    #   |\n";
+                    card += "|   ###  |\n";
+                    card += "|  ##### |\n";
+                    card += "|  # # # |\n";
+                    card += "|    #   |\n";
+                    card += Renderer::format("|      %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
                     std::cout << card;
                 }
                 break;
             }
             case Hearts: {
-                std::cout << "♡" << hand->getCards()[i].getRank() << " ";
+                if (hand->getCards()[i].getRank() == Ten) {
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s     |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|  #   # |\n";
+                    card += "| ##  ## |\n";
+                    card += "| ###### |\n";
+                    card += "|  ####  |\n";
+                    card += "|   ##   |\n";
+                    card += Renderer::format("|     %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
+                    std::cout << card;
+                } else {
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s      |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|  #   # |\n";
+                    card += "| ##  ## |\n";
+                    card += "| ###### |\n";
+                    card += "|  ####  |\n";
+                    card += "|   ##   |\n";
+                    card += Renderer::format("|      %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
+                    std::cout << card;
+                }
                 break;
             }
             case Clubs: {
-                std::cout << "♣" << hand->getCards()[i].getRank() << " ";
+                if (hand->getCards()[i].getRank() == Ten) {
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s     |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|    #   |\n";
+                    card += "|  ##### |\n";
+                    card += "|  ##### |\n";
+                    card += "|  ##### |\n";
+                    card += "|    #   |\n";
+                    card += Renderer::format("|     %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
+                    std::cout << card;
+                } else {
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s      |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|    #   |\n";
+                    card += "|  ##### |\n";
+                    card += "|  ##### |\n";
+                    card += "|  ##### |\n";
+                    card += "|    #   |\n";
+                    card += Renderer::format("|      %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
+                    std::cout << card;
+                }
                 break;
             }
             case Diamonds: {
-                std::cout << "♢" << hand->getCards()[i].getRank() << " ";
+                if (hand->getCards()[i].getRank() == Ten) {
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s     |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|    #   |\n";
+                    card += "|   ###  |\n";
+                    card += "|  ##### |\n";
+                    card += "|   ###  |\n";
+                    card += "|    #   |\n";
+                    card += Renderer::format("|     %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
+                    std::cout << card;
+                } else {
+                    std::string card = "----------\n";
+                    card += Renderer::format("| %s      |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "|    #   |\n";
+                    card += "|   ###  |\n";
+                    card += "|  ##### |\n";
+                    card += "|   ###  |\n";
+                    card += "|    #   |\n";
+                    card += Renderer::format("|      %s |\n", RANKS[hand->getCards()[i].getRank()]);
+                    card += "----------\n";
+                    std::cout << card;
+                }
                 break;
             }
             default:
@@ -36,12 +118,12 @@ void Renderer::renderCards(Hand* hand) {
 
 /*
 "----------" "----------" "----------" "----------"
-"| {}     |" "| {}     |" "| {}     |" "| {}     |"
+"| %s     |" "| %s     |" "| %s     |" "| %s     |"
 "|    #   |" "|    #   |" "|  #   # |" "|    #   |"
 "|   ###  |" "|   ###  |" "| ##  ## |" "|  ##### |"
 "|  ##### |" "|  ##### |" "| ###### |" "|  ##### |"
 "|   ###  |" "|  # # # |" "|  ####  |" "|  ##### |"
 "|    #   |" "|    #   |" "|   ##   |" "|    #   |"
-"|     {} |" "|     {} |" "|     {} |" "|     {} |"
+"|     %s |" "|     %s |" "|     %s |" "|     %s |"
 "----------" "----------" "----------" "----------"
 */
