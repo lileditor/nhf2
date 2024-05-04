@@ -48,12 +48,18 @@ void ChoosePlayer(Players &players) {
     for (int i = 0; i < players.GetSize(); i++) {
         std::cout << i << ". " << players[i].getName() << " " << players[i].getBalance() << std::endl;
     }
-    int option = 0;
-    std::cin >> option;
-    if (option >= 0 && option < players.GetSize() && players[option].getBalance() > 0) {
-        GameMenu(players, players[option]);
-    } else {
-        std::cout << "Invalid option or not enough money" << std::endl;
+    std::string op;
+    std::cin >> op;
+    try {
+        int option = std::stoi(op);
+        if (option >= 0 && option < players.GetSize() && players[option].getBalance() > 0) {
+            GameMenu(players, players[option]);
+        } else {
+            std::cout << "Invalid option or not enough money" << std::endl;
+            ChoosePlayer(players);
+        }
+    } catch (...) {
+        std::cout << "Invalid option" << std::endl;
         ChoosePlayer(players);
     }
 }
