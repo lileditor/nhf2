@@ -7,7 +7,7 @@ void generateCards(Card *cards) {
   }
 }
 
-void shuffeCards(Card *cards) {
+void shuffleCards(Card *cards) {
   std::random_device generator;
   std::uniform_real_distribution<float> distribution(0, 51);
   for (int i = 0; i < 52; i++) {

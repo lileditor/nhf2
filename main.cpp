@@ -5,7 +5,7 @@
 #include "FileHandler.hpp"
 #include "Players.hpp"
 #include "Menu.hpp"
-#include "Tests.hpp"
+//1#include "Tests.hpp"
 
 int main() {
     /*

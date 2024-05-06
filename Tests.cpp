@@ -1,6 +1,4 @@
-#include "Cards.hpp"
-#include "FileHandler.hpp"
-#include "gtest_lite.h"
+#include "Tests.hpp"
 
 void Test() {
   TEST(loadFile, "no file") { EXPECT_ANY_THROW(loadFile()); }

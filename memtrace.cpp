@@ -480,11 +480,19 @@ void * operator new[](size_t size) THROW_BADALLOC {
 	return memtrace::traced_new(size,0,NULL,FNEWARR);
 }
 
-void operator delete(void * p) THROW_NOTHING {
-	memtrace::traced_delete(p,FDELETE);
+void operator delete(void *p) THROW_NOTHING {
+  memtrace::traced_delete(p,FDELETE);
 }
 
 void operator delete[](void * p) THROW_NOTHING {
+  memtrace::traced_delete(p,FDELETEARR);
+}
+
+void operator delete(void * p, std::size_t) THROW_NOTHING {
+	memtrace::traced_delete(p,FDELETE);
+}
+
+void operator delete[](void * p, std::size_t) THROW_NOTHING {
 	memtrace::traced_delete(p,FDELETEARR);
 }
 
