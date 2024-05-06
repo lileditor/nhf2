@@ -15,7 +15,7 @@ class Player {
     int balance;
     Hand* hand = nullptr;
     public:
-    Player(const char* n) {
+    Player(const char* n){
         name = new char[strlen(n) + 1];
         strcpy(name, n);
         hand = new Hand();

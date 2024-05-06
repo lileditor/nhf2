@@ -20,8 +20,7 @@ enum Rank {
   Ace
 };
 
-static std::map<Rank, const char*> RANKS = {{Two, "2"}, {Three, "3"}, {Four, "4"}, {Five, "5"}, {Six, "6"}, {Seven, "7"}, {Eight, "8"}, {Nine, "9"}, {Ten, "10"}, {Jack, "J"}, {Queen, "Q"}, {King, "K"}, {Ace, "A"}};
-static std::map<Suit, const char*> SUITS = {{Clubs, "Clubs"}, {Diamonds, "Diamonds"}, {Hearts, "Hearts"}, {Spades, "Spades"}};
+static const std::map<Rank, const char*> RANKS = {{Two, "2"}, {Three, "3"}, {Four, "4"}, {Five, "5"}, {Six, "6"}, {Seven, "7"}, {Eight, "8"}, {Nine, "9"}, {Ten, "10"}, {Jack, "J"}, {Queen, "Q"}, {King, "K"}, {Ace, "A"}};
 
 /**
  * @brief

@@ -1,6 +1,7 @@
 #ifndef MENU_HPP
 #define MENU_HPP
 
+#include "Cards.hpp"
 #include "Players.hpp"
 
 /**
@@ -14,8 +15,6 @@ void PlayersMenu(Players &players);
 
 void ChoosePlayer(Players &players);
 
-void GameMenu(Players &players, Player &player);
-
-void EndMenu(Players &players);
+//void EndMenu(Players &players);
 
 #endif
