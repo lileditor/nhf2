@@ -1,6 +1,7 @@
 #ifndef CARDS_HPP
 #define CARDS_HPP
 #include <map>
+#include <cstddef>
 
 enum Suit { Clubs, Diamonds, Hearts, Spades };
 
@@ -49,9 +50,11 @@ public:
 
 class Cards {
   Card* cards;
+  size_t count;
 public:
-  Cards(Card* cards), cards(cards){};
+  Cards(Card* c): cards(c), count(52) {};
   void pop_front();
+  Card operator[](int i) {return cards[i];}
 };
 
 void generateCards(Card *cards);

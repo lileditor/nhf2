@@ -17,3 +17,12 @@ void shuffleCards(Card *cards) {
     cards[index] = tmp;
   }
 }
+
+void Cards::pop_front() {
+  Card* cs = new Card[--count];
+  for (size_t i = 1; i < count; i++) {
+    cs[i - 1] = cards[i];
+  }
+  delete cards;
+  cards = cs;
+}

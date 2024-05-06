@@ -1,18 +1,22 @@
 #include "MainGame.hpp"
 
 void GameMenu(Players& players, Player& player) {
-  Card* cards =  new Card[51];
-  generateCards(cards);
-  shuffleCards(cards);
-  Cards deck(cards);
+  Card* c =  new Card[51];
+  generateCards(c);
+  shuffleCards(c);
+  Cards deck(c);
   Hand *dealerHand = new Hand;
-  dealerHand->addCard(&deck[0]);
-  deck->pop_front();
-  player.getHand()->addCard(&deck[0]);
-  deck->pop_front();
+  Card first = deck[0];
+  dealerHand->addCard(&first);
+  deck.pop_front();
+  first = deck[0];
+  player.getHand()->addCard(&first);
+  deck.pop_front();
   Card holdedCard = deck[0];
-  deck->pop_front();
-  player.getHand()->addCard(&deck[0]);
-  
-  saveFIle(players);
+  deck.pop_front();
+  first = deck [0];
+  player.getHand()->addCard(&first);
+  std::cout << holdedCard.getRank() << std::endl;
+  Renderer::renderCards(player.getHand());
+  saveFile(players);
 }
