@@ -48,35 +48,23 @@ void PlayersMenu(Players &players) {
 void ChoosePlayer(Players &players) {
   std::cout << "Choose player: " << std::endl;
   for (int i = 0; i < players.GetSize(); i++) {
-    std::cout << i << ". " << players[i].getName() << " "
-              << players[i].getBalance() << std::endl;
+    std::cout << i << ". " << players[i].getName() << " " << players[i].getBalance() << std::endl;
   }
   std::string op;
   std::cin >> op;
   try {
     int option = std::stoi(op);
-    if (option >= 0 && option < players.GetSize() &&
-      players[option].getBalance() > 0) {
-      //GameMenu(players, players[option]);
+    if (option >= 0 && option < players.GetSize() && players[option].getBalance() > 0) {
+      GameMenu(players, players[option]);
+      return;
     } else {
       std::cout << "Invalid option or not enough money" << std::endl;
       ChoosePlayer(players);
+      return;
     }
   } catch (...) {
     std::cout << "Invalid option" << std::endl;
     ChoosePlayer(players);
+    return;
   }
 }
-
-/*void GameMenu(Players &players, Player &player) {
-    std::cout << player.getName() << " balance: " << player.getBalance() <<
-std::endl; std::cout << "Q - Quit" << " " << "B - Bet" << " " << "P - Hold"<<
-std::endl; saveFile(players, "state.txt");
-
-        TODO
-        Pack
-        Sorting
-        Hands management
-        Printing
-
-}*/

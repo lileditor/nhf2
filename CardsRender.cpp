@@ -1,77 +1,15 @@
 #include <iostream>
-//#include <format>
 #include "CardsRender.hpp"
 #include "Cards.hpp"
 
-/*
-"----------" "----------" "----------" "----------"
-"| %s     |" "| %s     |" "| %s     |" "| %s     |"
-"|    #   |" "|    #   |" "|  #   # |" "|    #   |"
-"|   ###  |" "|   ###  |" "| ##  ## |" "|  ##### |"
-"|  ##### |" "|  ##### |" "| ###### |" "|  ##### |"
-"|   ###  |" "|  # # # |" "|  ####  |" "|  ##### |"
-"|    #   |" "|    #   |" "|   ##   |" "|    #   |"
-"|     %s |" "|     %s |" "|     %s |" "|     %s |"
-"----------" "----------" "----------" "----------"
-*/
-
-const char* ClubsString[11] = {
-    "----------", 
-    "| %s      |", 
-    "|    #   |", 
-    "|   ###  |", 
-    "|  ##### |", 
-    "|  # # # |", 
-    "|    #   |", 
-    "|      %s |", 
-    "----------", 
-    "| %s     |", 
-    "|     %s |",
-};
-const char* DiamondsString[11] = {
-    "----------", 
-    "| %s      |", 
-    "|    #   |", 
-    "|   ###  |", 
-    "|  ##### |", 
-    "|   ###  |", 
-    "|    #   |", 
-    "|      %s |", 
-    "----------", 
-    "| %s     |", 
-    "|     %s |"
-};
-const char* HeartsString[11] = {
-    "----------", 
-    "| %s      |", 
-    "|  #   # |", 
-    "| ##  ## |", 
-    "| ###### |", 
-    "|  ####  |", 
-    "|   ##   |", 
-    "|      %s |", 
-    "----------", 
-    "| %s     |", 
-    "|     %s |"
-};
-const char* SpadesString[11] = {
-    "----------", 
-    "| %s      |", 
-    "|    #   |", 
-    "|  ##### |", 
-    "|  ##### |", 
-    "|  ##### |", 
-    "|    #   |", 
-    "|      %s |", 
-    "----------", 
-    "| %s     |", 
-    "|     %s |"
-};
 
 void Renderer::renderCards(Hand* hand) {
-    std::string cards = Renderer::getCardsString(hand);
-    std::cout << cards;
-    std::cout << "score: " << hand->getScore() << std::endl;
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < hand->getSize(); j++) {
+            std::cout << hand->getCards()[j]->printLn(i) << " ";
+        }
+        std::cout << "\n";
+    }
 }
 
 std::string Renderer::getCardsString(Hand *hand) {

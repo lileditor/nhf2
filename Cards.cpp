@@ -1,5 +1,6 @@
 #include "Cards.hpp"
 #include <random>
+#include <iostream>
 
 void generateCards(Card *cards) {
   for (int i = 0; i < 52; i++) {
@@ -16,13 +17,4 @@ void shuffleCards(Card *cards) {
     cards[i] = cards[index];
     cards[index] = tmp;
   }
-}
-
-void Cards::pop_front() {
-  Card* cs = new Card[--count];
-  for (size_t i = 1; i < count; i++) {
-    cs[i - 1] = cards[i];
-  }
-  delete cards;
-  cards = cs;
 }

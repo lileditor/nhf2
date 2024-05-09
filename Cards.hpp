@@ -46,15 +46,83 @@ public:
     suit = s;
     rank = r;
   }
+  virtual printLn(int line) = 0;
 };
 
-class Cards {
-  Card* cards;
-  size_t count;
+class Diamonds: public Card {
+  const char* str[11] = {
+    "----------", 
+    "| %s      |", 
+    "|    #   |", 
+    "|   ###  |", 
+    "|  ##### |", 
+    "|   ###  |", 
+    "|    #   |", 
+    "|      %s |", 
+    "----------", 
+    "| %s     |", 
+    "|     %s |"
+};
 public:
-  Cards(Card* c): cards(c), count(52) {};
-  void pop_front();
-  Card operator[](int i) {return cards[i];}
+  Diamonds(Rank r) : Card(Diamonds, r) {}
+  void printLn(int line);
+};
+
+class Clubs: public Card {
+  const char* str[11] = {
+    "----------", 
+    "| %s      |", 
+    "|    #   |", 
+    "|   ###  |", 
+    "|  ##### |", 
+    "|  # # # |", 
+    "|    #   |", 
+    "|      %s |", 
+    "----------", 
+    "| %s     |", 
+    "|     %s |",
+};
+public:
+  Clubs(Rank r) : Card(Clubs, r) {}
+  void printLn(int line);
+};
+
+class Hearts: public Card {
+  const char* str[11] = {
+    "----------", 
+    "| %s      |", 
+    "|  #   # |", 
+    "| ##  ## |", 
+    "| ###### |", 
+    "|  ####  |", 
+    "|   ##   |", 
+    "|      %s |", 
+    "----------", 
+    "| %s     |", 
+    "|     %s |"
+};
+public:
+  Hearts(Rank r) : Card(Hearts, r) {}
+  void printLn(int line);
+};
+
+class Spades: public Card {
+  const char* str[11] = {
+    "----------", 
+    "| %s      |", 
+    "|    #   |", 
+    "|  ##### |", 
+    "|  ##### |", 
+    "|  ##### |", 
+    "|    #   |", 
+    "|      %s |", 
+    "----------", 
+    "| %s     |", 
+    "|     %s |"
+};
+public:
+  Spades(Rank r) : Card(Spades, r) {}
+  void printLn(int line);
 };
 
 void generateCards(Card *cards);
