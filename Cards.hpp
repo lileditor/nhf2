@@ -46,26 +46,8 @@ public:
     suit = s;
     rank = r;
   }
-  virtual printLn(int line) = 0;
-};
-
-class Diamonds: public Card {
-  const char* str[11] = {
-    "----------", 
-    "| %s      |", 
-    "|    #   |", 
-    "|   ###  |", 
-    "|  ##### |", 
-    "|   ###  |", 
-    "|    #   |", 
-    "|      %s |", 
-    "----------", 
-    "| %s     |", 
-    "|     %s |"
-};
-public:
-  Diamonds(Rank r) : Card(Diamonds, r) {}
-  void printLn(int line);
+  virtual const char* printLn(int line) = 0;
+  virtual ~Card() {}
 };
 
 class Clubs: public Card {
@@ -83,9 +65,31 @@ class Clubs: public Card {
     "|     %s |",
 };
 public:
-  Clubs(Rank r) : Card(Clubs, r) {}
-  void printLn(int line);
+  Clubs(Rank r) : Card(static_cast<Suit>(0), r) {}
+  const char* printLn(int line);
+  ~Clubs() {}
 };
+
+class Diamonds: public Card {
+  const char* str[11] = {
+    "----------", 
+    "| %s      |", 
+    "|    #   |", 
+    "|   ###  |", 
+    "|  ##### |", 
+    "|   ###  |", 
+    "|    #   |", 
+    "|      %s |", 
+    "----------", 
+    "| %s     |", 
+    "|     %s |"
+};
+public:
+  Diamonds(Rank r) : Card(static_cast<Suit>(1), r) {}
+  const char* printLn(int line);
+  ~Diamonds() {}
+};
+
 
 class Hearts: public Card {
   const char* str[11] = {
@@ -102,8 +106,9 @@ class Hearts: public Card {
     "|     %s |"
 };
 public:
-  Hearts(Rank r) : Card(Hearts, r) {}
-  void printLn(int line);
+  Hearts(Rank r) : Card(static_cast<Suit>(2), r) {}
+  const char* printLn(int line);
+  ~Hearts() {}
 };
 
 class Spades: public Card {
@@ -121,12 +126,13 @@ class Spades: public Card {
     "|     %s |"
 };
 public:
-  Spades(Rank r) : Card(Spades, r) {}
-  void printLn(int line);
+  Spades(Rank r) : Card(static_cast<Suit>(3), r) {}
+  const char* printLn(int line);
+  ~Spades() {  }
 };
 
-void generateCards(Card *cards);
+Card **generateCards();
 
-void shuffleCards(Card *cards);
+std::vector <Card*>  shuffleCards(Card **cards);
 
 #endif

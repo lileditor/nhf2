@@ -14,7 +14,6 @@ void saveFile(Players& players, const char* fileName) {
     }
     file << "";
     for (int i = 0; i < players.GetSize(); i++) {
-        std::cout << players[i].getName() << " " << players[i].getBalance() << " " << players[i].getHand()->getSize() << "\n";
         file << players[i].getName() << " " << players[i].getBalance() << " " << players[i].getHand()->getSize() << "\n";
         for (int j = 0; j < players[i].getHand()->getSize(); j++) {
             file << players[i].getHand()->getCards()[j]->getSuit() << " " << players[i].getHand()->getCards()[j]->getRank() << "\n";
@@ -44,7 +43,20 @@ Players& loadFile(const char* fileName) {
             int suit;
             int rank;
             file >> suit >> rank;
-            player->getHand()->addCard(new Card(static_cast<Suit>(suit), static_cast<Rank>(rank)));
+        switch (suit) {
+                case 0:
+                    player->getHand()->addCard(new class Clubs(static_cast<Rank>(rank)));
+                    break;
+                case 1:
+                    player->getHand()->addCard(new class Diamonds(static_cast<Rank>(rank)));
+                    break;
+                case 2:
+                    player->getHand()->addCard(new class Hearts(static_cast<Rank>(rank)));
+                    break;
+                case 3:
+                    player->getHand()->addCard(new class Spades(static_cast<Rank>(rank)));
+                    break;
+            }
         }
         players->addPlayer(player);
     }

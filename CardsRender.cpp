@@ -12,7 +12,7 @@ void Renderer::renderCards(Hand* hand) {
     }
 }
 
-std::string Renderer::getCardsString(Hand *hand) {
+/*std::string Renderer::getCardsString(Hand *hand) {
     std::string cards = "";
     for (int i = 0; i < 9; i++) {
         if (hand->getSize() == 1) {
@@ -72,4 +72,4 @@ std::string Renderer::getCardStringFormLine(Card *card, int line) {
             break;
     }
     return cardString;
-}
+}*/

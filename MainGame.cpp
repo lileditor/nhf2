@@ -3,25 +3,23 @@
 //LEHET VECTOR JIPIIII
 
 void GameMenu(Players& players, Player& player) {
-  Card* c = new Card[51];
-  generateCards(c);
-  shuffleCards(c);
-  Cards deck(&c);
+  std::vector <Card*> deck = shuffleCards(generateCards());
   Hand *dealerHand = new Hand;
-  Card* first = deck[0];
+  Card* first = deck[deck.size() - 1];
   std::cout << "First card: " << first->getSuit() << " " << first->getRank() << std::endl;
   dealerHand->addCard(first);
-  deck.pop_front();
+  deck.pop_back();
   std::cout << "igazam van"<< std::endl;
-  first = deck[0];
+  first = deck[deck.size() - 1];
   std::cout << "First card: " << first->getSuit() << " " << first->getRank() << std::endl;
   player.getHand()->addCard(first);
-  deck.pop_front();
-  Card* holdedCard = deck[0];
+  deck.pop_back();
+  Card* holdedCard = deck[deck.size() - 1];
   std::cout << "Holded card: " << holdedCard->getSuit() << " " << holdedCard->getRank() << std::endl;
-  deck.pop_front();
-  first = deck[0];
+  deck.pop_back();
+  first = deck[deck.size() - 1];
   std::cout << "First card: " << first->getSuit() << " " << first->getRank() << std::endl;
+  deck.pop_back();
   player.getHand()->addCard(first);
   dealerHand->addCard(holdedCard);
   Renderer::renderCards(dealerHand);
