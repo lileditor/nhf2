@@ -48,13 +48,13 @@ void PlayersMenu(Players &players) {
 
 void ChoosePlayer(Players &players) {
   std::cout << "Choose player: " << std::endl;
-  for (int i = 0; i < players.GetSize(); i++) {
+  for (int i = 0; i < players.getSize(); i++) {
     std::cout << i << ". " << players[i].getName() << " " << players[i].getBalance() << std::endl;
   }
   std::string op;
   std::cin >> op;
   int option = std::stoi(op) ? std::stoi(op) : -1;
-  if (option >= 0 && option < players.GetSize() && players[option].getBalance() > 0) {
+  if (option >= 0 && option < players.getSize() && players[option].getBalance() > 0) {
     GameMenu(players, players[option]);
     return;
   } else {

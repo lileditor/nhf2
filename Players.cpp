@@ -2,9 +2,16 @@
 #include "Menu.hpp"
 #include <iostream>
 
-void Player::freePlayer(Player* player) {
-    delete[] player->name;
-    delete player->hand;
+Player::Player() {
+    name = new char[8];
+    strcpy(name, "Default");
+    hand = new Hand();
+    balance = DEFAULT_BALANCE;
+}
+
+void Player::freePlayer() {
+    delete[] this->name;
+    delete this->hand;
 }
 
 Player::Player(const char* n, int b) {
@@ -47,7 +54,7 @@ void Player::draw(int bet) {
     balance += bet;
 }
 
-void Players::CreatePlayer(const char* name) {
+void Players::createPlayer(const char* name) {
     Player *player = new Player(name);
     size++;
     players[size - 1] = player;
@@ -73,5 +80,5 @@ void CreateNewPlayer(Players &players) {
     std::cout << "Enter player name: ";
     std::string name;
     std::cin >> name;
-    players.CreatePlayer(name.c_str());
+    players.createPlayer(name.c_str());
 }

@@ -13,7 +13,7 @@ void saveFile(Players& players, const char* fileName) {
         throw std::runtime_error("File not found");
     }
     file << "";
-    for (int i = 0; i < players.GetSize(); i++) {
+    for (int i = 0; i < players.getSize(); i++) {
         file << players[i].getName() << " " << players[i].getBalance() << "\n";
     }
     file.close();

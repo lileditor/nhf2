@@ -15,6 +15,7 @@ class Player {
     int balance;
     Hand* hand = nullptr;
     public:
+    Player();
     Player(const char* n);
     Player(const char* n, int b);
 
@@ -24,7 +25,7 @@ class Player {
 
     Player& operator=(const Player& other);
 
-    void freePlayer(Player* player);
+    void freePlayer();
 
     Hand* getHand() const { return hand; }
 
@@ -50,8 +51,8 @@ class Players {
     public:
     Players();
     Players(const char **names, int count);
-    void CreatePlayer(const char* name);
-    int GetSize() const { return size; }
+    void createPlayer(const char* name);
+    int getSize() const { return size; }
     void addPlayer(Player* player) {
         players[size++] = player;
     }

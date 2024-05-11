@@ -3,6 +3,7 @@
 
 #include "Hands.hpp"
 #include <cstdarg>
+#include <string>
 
 
 /**
