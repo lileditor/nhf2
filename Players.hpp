@@ -15,12 +15,7 @@ class Player {
     int balance;
     Hand* hand = nullptr;
     public:
-    Player(const char* n){
-        name = new char[strlen(n) + 1];
-        strcpy(name, n);
-        hand = new Hand();
-        balance = DEFAULT_BALANCE;
-    }
+    Player(const char* n);
     Player(const char* n, int b);
 
     char* getName() const { return name; }
@@ -33,7 +28,12 @@ class Player {
 
     Hand* getHand() const { return hand; }
 
+    void win(int bet);
+    void lose(int bet);
+    void draw(int bet);
+
     ~Player() {
+        std::cout << "Deleting player " << name << std::endl;
         if (name != nullptr) {
             delete[] name;
             delete hand;
@@ -50,15 +50,7 @@ class Players {
     int size;
     public:
     Players();
-    Players(const char **names, int count) {
-        players = new Player*[count];
-        for (int i = 0; i < count; i++) {
-            Player *player = new Player(names[i]);
-            players++;
-            *players[i] = *player;
-        }
-        size = count;
-    }
+    Players(const char **names, int count);
     void CreatePlayer(const char* name);
     int GetSize() const { return size; }
     void addPlayer(Player* player) {
@@ -66,11 +58,9 @@ class Players {
     }
 
     ~Players() {
-        if (players == nullptr) return;
-        /*for (int i = 0; i < size; i++) {
-            if (players[i].getHand() != nullptr)
-                //Player::freePlayer(&players[i]);
-        }*/
+        for (int i = 0; i < size; i++) {
+            players[i]->~Player();
+        }
         delete[] players;
     }
 

@@ -5,13 +5,13 @@
 #include "FileHandler.hpp"
 #include "Players.hpp"
 #include "Menu.hpp"
-//1#include "Tests.hpp"
+//#include "Tests.hpp"
 
 int main() {
     /*
         loadfile(); write tests
         menu(); write tests
-        game(); work in progress
+        game(); write tests
     */
     Players players = loadFile("state.txt");
     StartMenu(players);
