@@ -33,7 +33,6 @@ class Player {
     void draw(int bet);
 
     ~Player() {
-        std::cout << "Deleting player " << name << std::endl;
         if (name != nullptr) {
             delete[] name;
             delete hand;
@@ -59,7 +58,7 @@ class Players {
 
     ~Players() {
         for (int i = 0; i < size; i++) {
-            players[i]->~Player();
+            players[i]->freePlayer();
         }
         delete[] players;
     }

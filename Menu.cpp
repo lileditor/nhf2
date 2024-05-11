@@ -32,6 +32,7 @@ void PlayersMenu(Players &players) {
   switch (option) {
   case 0:
     CreateNewPlayer(players);
+    PlayersMenu(players);
     break;
   case 1:
     ChoosePlayer(players);

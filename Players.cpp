@@ -74,5 +74,4 @@ void CreateNewPlayer(Players &players) {
     std::string name;
     std::cin >> name;
     players.CreatePlayer(name.c_str());
-    PlayersMenu(players);
 }
