@@ -8,10 +8,9 @@ void Hand::addCard(Card *c) {
 }
 
 void Hand::deleteCards() {
-    /*for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
         delete cards[i];
-    }*/
-    //delete [] cards;
+    }
     size = 0;
     score = 0;
 }

@@ -13,13 +13,13 @@ void Test() {
     Card *card = new class Spades(Jack);
     hand.addCard(card);
     EXPECT_EQ(hand.getScore(), 10);
-    //hand.deleteCards();
+    hand.deleteCards();
   } END;
   TEST(Hand, "AddCard") {
     Hand hand;
     Card *card = new class Hearts(Five);
     EXPECT_NO_THROW(hand.addCard(card));
-    //hand.deleteCards();
+    hand.deleteCards();
   } END;
   TEST(Hand, "GetSize") { //itt meg jo
     Hand hand;
@@ -29,40 +29,40 @@ void Test() {
     EXPECT_EQ(hand.getSize(), 1);
     hand.addCard(card2);
     EXPECT_EQ(hand.getSize(), 2);
-    //hand.deleteCards();
+    hand.deleteCards();
   } END;
   TEST(Hand, "GetScore") {
     Hand hand;
     Card *card = new class Diamonds(Ace);
     hand.addCard(card);
     EXPECT_EQ(hand.getScore(), 11);
-    //hand.deleteCards();
+    hand.deleteCards();
   } END;
   TEST(Hand, "DeleteCard") {
     Hand hand;
     Card *card = new class Spades(Ace);
     hand.addCard(card);
-    hand.deleteCards();
+hand.deleteCards();
     EXPECT_EQ(hand.getSize(), 0);
     EXPECT_EQ(hand.getScore(), 0);
   } END;
   TEST(Card, "Score") {
     Card *card = new class Spades(Ten);
     EXPECT_EQ(card->getValue(), 10);
-    //delete card;
+    delete card;
   } END;
   TEST(Card, "Konstuction") { //itt nem jo
     Card *card = new class Spades(Ten);
     EXPECT_EQ(card->getValue(), 10);
     EXPECT_EQ(card->getSuit(), Spades);
     EXPECT_EQ(card->getRank(), Ten);
-    //delete card;
+    delete card;
   } END;
   TEST(Card, "Print") {
     Card* card = new class Diamonds(Ten);
     EXPECT_STREQ(card->printLn(0), "----------");
     EXPECT_STREQ(Renderer::format(card->printLn(1), RANKS[card->getRank()]).c_str(), "| 10     |");
-    //delete card;
+    delete card;
   } END;
   TEST(Cards, "Generate") {
     Card** cards = generateCards();
@@ -111,14 +111,14 @@ void Test() {
   TEST(Players, "Konstuction") {
     Players *players = new Players();
     EXPECT_EQ(players->getSize(), 0);
-    //delete players;
+    delete players;
   } END;
   TEST(Players, "createPlayer") {
     Players *players = new Players();
     players->createPlayer("Howard");
     EXPECT_EQ(players->getSize(), 1);
     EXPECT_STREQ(players->operator[](0).getName(), "Howard");
-    //delete players;
+    delete players;
   } END;
   TEST(Players, "CreateNewPlayer") {
     //need to write to stdin
@@ -130,7 +130,7 @@ void Test() {
     Hand hand;
     hand.addCard(new class Spades(Jack));
     Renderer::renderCards(&hand);
-    //hand.deleteCards();
+    hand.deleteCards();
     //need to read from stdin
   } END;
 }

@@ -56,9 +56,6 @@ class Players {
     }
 
     ~Players() {
-        for (int i = 0; i < size; i++) {
-            players[i]->freePlayer();
-        }
         delete[] players;
     }
 

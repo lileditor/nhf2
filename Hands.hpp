@@ -1,6 +1,7 @@
 #ifndef HANDS_HPP
 #define HANDS_HPP
 #include "Cards.hpp"
+#include <iostream>
 
 /**
  * @brief
@@ -27,7 +28,7 @@ public:
 
   void deleteCards();
 
-  ~Hand() { delete[] cards; }
+  ~Hand() { for (int i = 0; i < size; i++) { delete cards[i]; } delete[] cards; }
 };
 
 #endif

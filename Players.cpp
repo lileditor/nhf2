@@ -10,8 +10,7 @@ Player::Player() {
 }
 
 void Player::freePlayer() {
-    delete[] this->name;
-    delete this->hand;
+    Player::~Player();
 }
 
 Player::Player(const char* n, int b) {
@@ -30,7 +29,7 @@ Player::Player(const char* n) {
 
 Player& Player::operator=(const Player& other) {
     if (this != &other) {
-        delete name;
+        delete[] name;
         delete hand;
         name = new char[strlen(other.name) + 1];
         strcpy(name, other.name);
