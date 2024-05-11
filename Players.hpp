@@ -34,10 +34,8 @@ class Player {
     void draw(int bet);
 
     ~Player() {
-        if (name != nullptr) {
-            delete[] name;
-            delete hand;
-        }
+        delete[] name;
+        delete hand;
     }
 };
 

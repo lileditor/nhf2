@@ -1,11 +1,9 @@
 #include <iostream>
-#include "Cards.hpp"
-#include "Hands.hpp"
-#include "CardsRender.hpp"
 #include "FileHandler.hpp"
 #include "Players.hpp"
 #include "Menu.hpp"
-//#include "Tests.hpp"
+#include "Tests.hpp"
+#define CPORTA
 
 int main() {
     /*
@@ -13,6 +11,10 @@ int main() {
         menu(); write tests
         game(); write tests
     */
+#ifdef CPORTA
+    Test();
+#else
     Players players = loadFile("state.txt");
     StartMenu(players);
+#endif
 } 

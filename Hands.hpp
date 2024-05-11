@@ -25,6 +25,8 @@ public:
 
   Card **getCards() const { return cards; }
 
+  void deleteCards();
+
   ~Hand() { delete[] cards; }
 };
 

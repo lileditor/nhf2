@@ -13,15 +13,15 @@ Card** generateCards() {
   return cards;
 }
 
-std::vector <Card*> shuffleCards(Card **cards) {
+std::vector <Card*> shuffleCards(Card **c) {
   std::random_device generator;
   std::uniform_real_distribution<float> distribution(0, 51);
   std::vector<Card*> Cards;
   for (int i = 0; i < 52; i++) {
     int index = distribution(generator);
-    Cards.push_back(cards[index]);
+    Cards.push_back(c[index]);
   }
-  delete[] cards;
+  delete[] c;
   return Cards;
 }
 

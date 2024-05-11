@@ -29,11 +29,13 @@ Card* setupHands(Player& player, Hand& dealerHand, std::vector <Card*> deck) {
 void calculateWinner(Player& player, int bet, int score) {
   if (score < player.getHand()->getScore() && player.getHand()->getScore() <= 21) {
     player.win(bet);
-  } else if (score > player.getHand()->getScore()) {
-    player.lose(bet);
-  } else {
+  } else if (score == player.getHand()->getScore()) {
     player.draw(bet);
+  } else {
+    player.lose(bet);
   }
+  player.getHand()->deleteCards();
+  std::cout << "Your balance: " << player.getBalance() << std::endl;
 }
 
 void gameLoop(Players& players,Player& player, int bet, Hand* dealerHand, Card* heldCard, std::vector <Card*> deck) {
@@ -51,6 +53,8 @@ void gameLoop(Players& players,Player& player, int bet, Hand* dealerHand, Card* 
         Renderer::renderCards(dealerHand);
         Renderer::renderCards(player.getHand());
         if (player.getHand()->getScore() > 21) {
+          Renderer::renderCards(dealerHand);
+          Renderer::renderCards(player.getHand());
           calculateWinner(player, bet, dealerHand->getScore());
           end = true;
           GameMenu(players, player);
@@ -64,6 +68,8 @@ void gameLoop(Players& players,Player& player, int bet, Hand* dealerHand, Card* 
           Renderer::renderCards(dealerHand);
           Renderer::renderCards(player.getHand());
         }
+        Renderer::renderCards(dealerHand);
+        Renderer::renderCards(player.getHand());
         calculateWinner(player, bet, dealerHand->getScore());
         end = true;
         GameMenu(players, player);

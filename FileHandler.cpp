@@ -14,6 +14,7 @@ void saveFile(Players& players, const char* fileName) {
     }
     file << "";
     for (int i = 0; i < players.getSize(); i++) {
+        std::cout << players[i].getName() << " " << players[i].getBalance() << std::endl;
         file << players[i].getName() << " " << players[i].getBalance() << "\n";
     }
     file.close();
