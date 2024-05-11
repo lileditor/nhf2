@@ -24,3 +24,37 @@ std::vector <Card*> shuffleCards(Card **cards) {
   delete[] cards;
   return Cards;
 }
+
+const char* Clubs::printLn(int line) {
+  if (line == 1 && getRank() == Ten) {
+    return str[9];
+  } else if (line == 7 && getRank() == Ten) {
+    return str[10];
+  }
+  return str[line];
+}
+const char* Diamonds::printLn(int line) {
+  if (line == 1 && getRank() == Ten) {
+    return str[9];
+  } else if (line == 7 && getRank() == Ten) {
+    return str[10];
+  }
+  return str[line];
+}
+
+const char* Hearts::printLn(int line) {
+  if (line == 1 && getRank() == Ten) {
+    return str[9];
+  } else if (line == 7 && getRank() == Ten) {
+    return str[10];
+  }
+  return str[line];
+}
+const char* Spades::printLn(int line) {
+  if (line == 1 && getRank() == Ten) {
+    return str[9];
+  } else if (line == 7 && getRank() == Ten) {
+    return str[10];
+  }
+  return str[line];
+}

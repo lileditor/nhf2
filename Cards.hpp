@@ -2,6 +2,7 @@
 #define CARDS_HPP
 #include <map>
 #include <cstddef>
+#include <vector>
 
 enum Suit { Clubs, Diamonds, Hearts, Spades };
 
@@ -128,7 +129,7 @@ class Spades: public Card {
 public:
   Spades(Rank r) : Card(static_cast<Suit>(3), r) {}
   const char* printLn(int line);
-  ~Spades() {  }
+  ~Spades() {}
 };
 
 Card **generateCards();

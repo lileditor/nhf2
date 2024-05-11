@@ -30,8 +30,6 @@ namespace Renderer {
         delete[] buffer;
         return ret;
     }
-    //std::string getCardsString(Hand *hand);
-    //std::string getCardStringFormLine(Card *card, int line);
 }
 
 

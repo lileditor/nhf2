@@ -25,6 +25,7 @@ class Player {
 
     char* getName() const { return name; }
     int getBalance() const { return balance; }
+    void placeBet(int bet) { balance -= bet; }
 
     Player& operator=(const Player& other);
 
