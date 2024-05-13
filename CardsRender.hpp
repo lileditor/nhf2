@@ -11,7 +11,7 @@
  * Ez a kártyák kiírását valósítja meg
  */
 namespace Renderer {
-    void renderCards(Hand *hand);
+    void renderCards(Hand *hand, std::ostream& os = std::cout);
     /*https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf*/
     inline std::string format(const char* fmt, ...){
         int size = 512;

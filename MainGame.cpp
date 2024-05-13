@@ -34,8 +34,8 @@ void calculateWinner(Player& player, int bet, int score) {
   } else {
     player.lose(bet);
   }
-  player.getHand()->deleteCards();
   std::cout << "Your balance: " << player.getBalance() << std::endl;
+  player.getHand()->deleteCards();
 }
 
 void gameLoop(Players& players,Player& player, int bet, Hand* dealerHand, Card* heldCard, std::vector <Card*> deck) {

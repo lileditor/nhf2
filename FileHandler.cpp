@@ -20,7 +20,7 @@ void saveFile(Players& players, const char* fileName) {
     file.close();
 }
 
-Players* loadFile(const char* fileName) {
+Players loadFile(const char* fileName) {
     if (fileName == nullptr) {
         throw std::invalid_argument("File name cannot be null");
     }
@@ -28,14 +28,14 @@ Players* loadFile(const char* fileName) {
     if (!file.is_open()) {
         throw std::runtime_error("File not found");
     }
-    Players *players = new Players();
+    Players players = Players();
     std::string line;
     while (file >> line) {
         const char *name = line.c_str();
         int balance;
         file >> balance;
         Player *player = new Player(name, balance);
-        players->addPlayer(player);
+        players.addPlayer(player);
     }
     return players;
 }

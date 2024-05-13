@@ -3,12 +3,12 @@
 #include "Cards.hpp"
 
 
-void Renderer::renderCards(Hand* hand) {
+void Renderer::renderCards(Hand* hand, std::ostream &os) {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < hand->getSize(); j++) {
-            std::cout << Renderer::format(hand->getCards()[j]->printLn(i), RANKS[hand->getCards()[j]->getRank()]) << " ";
+            os << Renderer::format(hand->getCards()[j]->printLn(i), RANKS[hand->getCards()[j]->getRank()]) << " ";
         }
-        std::cout << "\n";
+        os << "\n";
     }
-    std::cout << "Score: " <<hand->getScore() << "\n";
+    os << "Score: " <<hand->getScore() << "\n";
 }

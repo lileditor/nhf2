@@ -2,15 +2,14 @@
 
 void Test() {
   TEST(loadFile, "no file") {
-    Players *players;
-    EXPECT_ANY_THROW(players = loadFile(); std::invalid_argument);
-    players->getSize();
+    Players players;
+    EXPECT_ANY_THROW(players = loadFile(); std::invalid_argument(""));
+    players.getSize();
     //delete players; 
   } END;
   TEST(loadFile, "file included") { 
-    Players *players = nullptr;
+    Players players;
     EXPECT_NO_THROW(players = loadFile("state.txt")); 
-    delete players;
   } END;
   TEST(Hand, "Konstuction") {
     Hand hand;

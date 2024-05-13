@@ -10,7 +10,7 @@
  * @param fileName 
  * @return Players& 
  */
-Players* loadFile(const char* fileName = nullptr);
+Players loadFile(const char* fileName = nullptr);
 
 /**
  * @brief 

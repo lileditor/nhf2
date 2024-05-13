@@ -5,30 +5,29 @@ Keszitette: Peregi Tamas, BME IIT, 2011
 Kanari:     Szeberenyi Imre, 2013.,
 VS 2012:    Szeberényi Imre, 2015.,
 mem_dump:   2016.
-inclue-ok:  2017., 2018. 2019.
+inclue-ok:  2017., 2018., 2019., 2021., 2022.
 *********************************/
 
 #ifndef MEMTRACE_H
 #define MEMTRACE_H
-//#define MEMTRACE
 
 #if defined(MEMTRACE)
 
 /*ha definiálva van, akkor a hibakat ebbe a fajlba írja, egyébkent stderr-re*/
-//#define MEMTRACE_ERRFILE MEMTRACE.ERR
+/*#define MEMTRACE_ERRFILE MEMTRACE.ERR*/
 
 /*ha definialva van, akkor futas kozben lancolt listat epit. Javasolt a hasznalata*/
 #define MEMTRACE_TO_MEMORY
 
 /*ha definialva van, akkor futas kozben fajlba irja a foglalasokat*/
 /*ekkor nincs ellenorzes, csak naplozas*/
-//#define MEMTRACE_TO_FILE
+/*#define MEMTRACE_TO_FILE*/
 
 /*ha definialva van, akkor a megallaskor automatikus riport keszul */
 #define MEMTRACE_AUTO
 
 /*ha definialva van, akkor malloc()/calloc()/realloc()/free() kovetve lesz*/
-//#define MEMTRACE_C
+#define MEMTRACE_C
 
 #ifdef MEMTRACE_C
 	/*ha definialva van, akkor free(NULL) nem okoz hibat*/
@@ -102,7 +101,8 @@ END_NAMESPACE
 
 #if defined(MEMTRACE_TO_MEMORY)
 START_NAMESPACE
-        int mem_check(void);
+    int mem_check(void);
+    int poi_check(void*);
 END_NAMESPACE
 #endif
 
@@ -154,6 +154,18 @@ END_NAMESPACE
 	#include <map>
 	#include <algorithm>
 	#include <functional>
+	#include <memory>
+	#include <iomanip>
+	#include <locale>
+	#include <typeinfo>
+	#include <ostream>
+	#include <stdexcept>
+	#include <ctime>
+	#include <random>
+    #if __cplusplus >= 201103L
+        #include <iterator>
+        #include <regex>
+    #endif
 #endif
 #ifdef MEMTRACE_CPP
 	namespace std {
@@ -179,8 +191,7 @@ START_NAMESPACE
 	#define realloc(old,size) TRACEC(traced_realloc)(old,size,#size,__LINE__,__FILE__)
 	void * traced_realloc(void * old, size_t size, const char *size_txt, int line, const char * file);
 
-	void mem_dump(void const *mem, size_t size, FILE* fp);
-
+	void mem_dump(void const *mem, size_t size, FILE* fp = stdout);
 
 END_NAMESPACE
 #endif/*MEMTRACE_C*/
@@ -201,13 +212,19 @@ void * operator new[](size_t size) THROW_BADALLOC;
 void operator delete(void * p)  THROW_NOTHING;
 void operator delete[](void * p) THROW_NOTHING;
 
+#if __cplusplus >= 201402L
+// sized delete miatt: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3536.html
+void operator delete(void * p, size_t)  THROW_NOTHING;
+void operator delete[](void * p, size_t) THROW_NOTHING;
+#endif
+
 /* Visual C++ 2012 miatt kell, mert háklis, hogy nincs megfelelő delete, bár senki sem használja */
 void operator delete(void *p, int, const char *) THROW_NOTHING;
 void operator delete[](void *p, int, const char *) THROW_NOTHING;
 
 
 #define new new(__LINE__, __FILE__)
-#define delete memtrace::set_delete_call(__LINE__, __FILE__), delete
+#define delete memtrace::set_delete_call(__LINE__, __FILE__),delete
 
 #ifdef CPORTA
 #define system(...)  // system(__VA_ARGS__)
@@ -216,5 +233,8 @@ void operator delete[](void *p, int, const char *) THROW_NOTHING;
 #endif /*MEMTRACE_CPP*/
 
 #endif /*FROM_MEMTRACE_CPP*/
-#endif /*MEMCHECK*/
+#else
+#pragma message ( "MEMTRACE NOT DEFINED" )
+#endif /*MEMTRACE*/
+
 #endif /*MEMTRACE_H*/
