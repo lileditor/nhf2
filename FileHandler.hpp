@@ -2,6 +2,7 @@
 #define FILEHANDLER_HPP
 
 #include "Players.hpp"
+#include "memtrace.h"
 
 /**
  * @brief 
@@ -9,7 +10,7 @@
  * @param fileName 
  * @return Players& 
  */
-Players& loadFile(const char* fileName = nullptr);
+Players* loadFile(const char* fileName = nullptr);
 
 /**
  * @brief 

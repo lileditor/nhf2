@@ -2,6 +2,8 @@
 #define HANDS_HPP
 #include "Cards.hpp"
 #include <iostream>
+#include "memtrace.h"
+
 
 /**
  * @brief

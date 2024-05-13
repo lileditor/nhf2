@@ -3,6 +3,8 @@
 #include <map>
 #include <cstddef>
 #include <vector>
+#include "memtrace.h"
+
 
 enum Suit { Clubs, Diamonds, Hearts, Spades };
 

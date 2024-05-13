@@ -3,6 +3,8 @@
 
 #include "Cards.hpp"
 #include "Players.hpp"
+#include "memtrace.h"
+
 
 /**
  * @brief 
@@ -14,7 +16,5 @@ void StartMenu(Players &players);
 void PlayersMenu(Players &players);
 
 void ChoosePlayer(Players &players);
-
-//void EndMenu(Players &players);
 
 #endif

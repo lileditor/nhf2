@@ -1,11 +1,16 @@
 #include "Tests.hpp"
 
 void Test() {
-  TEST(loadFile, "no file") { 
-    EXPECT_ANY_THROW(loadFile()); 
+  TEST(loadFile, "no file") {
+    Players *players;
+    EXPECT_ANY_THROW(players = loadFile(); std::invalid_argument);
+    players->getSize();
+    //delete players; 
   } END;
   TEST(loadFile, "file included") { 
-    EXPECT_NO_THROW(loadFile("state.txt")); 
+    Players *players = nullptr;
+    EXPECT_NO_THROW(players = loadFile("state.txt")); 
+    delete players;
   } END;
   TEST(Hand, "Konstuction") {
     Hand hand;
@@ -42,7 +47,7 @@ void Test() {
     Hand hand;
     Card *card = new class Spades(Ace);
     hand.addCard(card);
-hand.deleteCards();
+    hand.deleteCards();
     EXPECT_EQ(hand.getSize(), 0);
     EXPECT_EQ(hand.getScore(), 0);
   } END;
