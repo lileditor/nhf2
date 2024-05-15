@@ -12,11 +12,10 @@ int main() {
         game(); write tests
     */
 #ifdef CPORTA
+    Test();
 #else
     Players players = loadFile("state.txt");
     StartMenu(players);
 #endif
-    std::cout << "Hello, World!" << std::endl;
-    Test();
     return 0;
 }

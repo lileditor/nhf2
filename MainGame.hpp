@@ -4,6 +4,7 @@
 #include "FileHandler.hpp"
 #include "CardsRender.hpp"
 #include <vector>
+#include <algorithm>
 #include "memtrace.h"
 
 

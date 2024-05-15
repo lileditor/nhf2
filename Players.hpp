@@ -36,8 +36,10 @@ class Player {
     void draw(int bet);
 
     ~Player() {
+        if (name == nullptr) return;
         delete[] name;
         delete hand;
+        name = nullptr;
     }
 };
 
@@ -58,10 +60,15 @@ class Players {
     }
 
     ~Players() {
+        //if (players == nullptr) return;
         for (int i = 0; i < size; i++) {
+            //if (players[i])
+            //delete players[i];
+            players[i]->freePlayer();
             delete players[i];
         }
         delete[] players;
+        //players = nullptr;
     }
 
     Player& operator[](int index) {

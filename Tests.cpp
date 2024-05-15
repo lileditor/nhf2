@@ -4,8 +4,6 @@ void Test() {
   TEST(loadFile, "no file") {
     Players players;
     EXPECT_ANY_THROW(players = loadFile(); std::invalid_argument(""));
-    players.getSize();
-    //delete players; 
   } END;
   TEST(loadFile, "file included") { 
     Players players;
@@ -132,7 +130,8 @@ void Test() {
   } END;
   TEST(CardsRender, "RenderCards") {
     Hand hand;
-    hand.addCard(new class Spades(Jack));
+    Card* card = new class Spades(Jack);
+    hand.addCard(card);
     Renderer::renderCards(&hand);
     hand.deleteCards();
     //need to read from stdin

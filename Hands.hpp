@@ -10,7 +10,7 @@
  * Ez a kártyákat tudja kezelni ami éppen nálad van.
  */
 class Hand {
-  Card **cards;
+  Card **cards = nullptr;
   int size;
   int score;
 
@@ -30,7 +30,17 @@ public:
 
   void deleteCards();
 
-  ~Hand() { for (int i = 0; i < size; i++) { delete cards[i]; } delete[] cards; }
+  ~Hand() { 
+  if (cards != nullptr) { 
+    for (int i = 0; i < size; i++) {
+      if (cards[i] != nullptr)
+        delete cards[i];
+      cards[i] = nullptr;
+    } 
+    delete[] cards;
+    cards = nullptr; 
+    } 
+  }
 };
 
 #endif
