@@ -23,13 +23,13 @@ void Test() {
     EXPECT_NO_THROW(hand.addCard(card));
     hand.deleteCards();
   } END;
-  TEST(Hand, "GetSize") { //itt meg jo
+  TEST(Hand, "GetSize") {
     Hand hand;
     Card *card = new class Diamonds(Ace);
     Card *card2 = new class Clubs(King);
     hand.addCard(card);
     EXPECT_EQ(hand.getSize(), 1);
-    hand.addCard(card2);
+    hand.addCard(card2); 
     EXPECT_EQ(hand.getSize(), 2);
     hand.deleteCards();
   } END;

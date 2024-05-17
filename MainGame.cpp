@@ -9,6 +9,10 @@ int placeBet(Player& player) {
     return -1;
   }
   bet = std::stoi(op) ? std::stoi(op) : -1;
+  if (bet > player.getBalance()) {
+    std::cout << "Not enough money" << std::endl;
+    return placeBet(player);
+  }
   player.placeBet(bet);
   return bet;
 }
