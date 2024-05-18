@@ -2,12 +2,10 @@
 
 void Test() {
   TEST(loadFile, "no file") {
-    Players players;
-    EXPECT_ANY_THROW(players = loadFile(); std::invalid_argument(""));
+    EXPECT_ANY_THROW(Players players = loadFile(); std::invalid_argument(""));
   } END;
-  TEST(loadFile, "file included") { 
-    Players players;
-    EXPECT_NO_THROW(players = loadFile("state.txt")); 
+  TEST(loadFile, "file included") { //valamiert ketszer hivodik meg a destruktor
+    EXPECT_NO_THROW(Players players = loadFile("state.txt"));
   } END;
   TEST(Hand, "Konstuction") {
     Hand hand;
@@ -123,7 +121,10 @@ void Test() {
     delete players;
   } END;
   TEST(Players, "CreateNewPlayer") {
-    //need to write to stdin
+    Players players = Players();
+    CreateNewPlayer(players);
+    EXPECT_EQ(players.getSize(), 1);
+    EXPECT_STREQ(players[0].getName(), "John");
   } END;
   TEST(CardsRender, "Format") {
     EXPECT_STREQ(Renderer::format("%s", "Hello World").c_str(), "Hello World");
@@ -132,8 +133,9 @@ void Test() {
     Hand hand;
     Card* card = new class Spades(Jack);
     hand.addCard(card);
-    Renderer::renderCards(&hand);
+    std::stringstream ss;
+    Renderer::renderCards(&hand, ss);
+    EXPECT_STREQ("---------- \n| J      | \n|    #   | \n|  ##### | \n|  ##### | \n|  ##### | \n|    #   | \n|      J | \n---------- \nScore: 10\n", ss.str().c_str());
     hand.deleteCards();
-    //need to read from stdin
   } END;
 }

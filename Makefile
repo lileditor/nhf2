@@ -1,2 +1,2 @@
 game:
-	g++ *.cpp -o main -std=c++17 -g -DMEMTRACE -Wall -Wextra 
+	g++ *.cpp -o main -std=c++17 -g -DMEMTRACE -Wall -Wextra -DCPORTA

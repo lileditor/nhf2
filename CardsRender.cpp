@@ -10,5 +10,5 @@ void Renderer::renderCards(Hand* hand, std::ostream &os) {
         }
         os << "\n";
     }
-    os << "Score: " <<hand->getScore() << "\n";
+    os << "Score: " << hand->getScore() << "\n";
 }

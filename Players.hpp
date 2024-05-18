@@ -60,15 +60,13 @@ class Players {
     }
 
     ~Players() {
-        //if (players == nullptr) return;
+        if (players == nullptr) return;
         for (int i = 0; i < size; i++) {
-            //if (players[i])
-            //delete players[i];
             players[i]->freePlayer();
             delete players[i];
         }
         delete[] players;
-        //players = nullptr;
+        players = nullptr;
     }
 
     Player& operator[](int index) {

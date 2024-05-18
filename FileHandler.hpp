@@ -8,7 +8,7 @@
  * @brief 
  * Innen fogja tudni hogy melyik játékosnak mennyi pontja van.
  * @param fileName 
- * @return Players& 
+ * @return Players 
  */
 Players loadFile(const char* fileName = nullptr);
 
