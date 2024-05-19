@@ -13,8 +13,18 @@
  */
 void StartMenu(Players &players);
 
+/**
+ * @brief 
+ * Ez kilistázza a játékosokat.
+ * @param players 
+ */
 void PlayersMenu(Players &players);
 
+/**
+ * @brief 
+ * Ebben választjuk ki melyik játékossal akarunk játszani.
+ * @param players 
+ */
 void ChoosePlayer(Players &players);
 
 #endif

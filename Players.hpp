@@ -62,7 +62,6 @@ class Players {
     ~Players() {
         if (players == nullptr) return;
         for (int i = 0; i < size; i++) {
-            players[i]->freePlayer();
             delete players[i];
         }
         delete[] players;
@@ -74,6 +73,11 @@ class Players {
     }
 };
 
+/**
+ * @brief Create a New Player object
+ * Ez létrehoz egy uj játékost akinek a nevét stdin-ben adjuk meg.
+ * @param players 
+ */
 void CreateNewPlayer(Players &players);
 
 #endif

@@ -10,6 +10,10 @@
 #include <string>
 #include "gtest_lite.h"
 
+/**
+ * @brief 
+ * Ezekben a tesztek vannak.
+ */
 void Test();
 
 #endif

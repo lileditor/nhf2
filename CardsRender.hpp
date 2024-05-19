@@ -11,8 +11,22 @@
  * Ez a kártyák kiírását valósítja meg
  */
 namespace Renderer {
+    /**
+     * @brief 
+     * Ez felel azért hogy láthatóak legyenek a kártyák. 
+     * @param hand 
+     * @param os 
+     */
     void renderCards(Hand *hand, std::ostream& os = std::cout);
-    /*https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf*/
+
+    /**
+     * @brief 
+     * https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf
+     * Ez a függvény megformázza a kártyákat és visszaadja azt std::string-be.
+     * @param fmt
+     * @param ...
+     * @return std::string
+     */
     inline std::string format(const char* fmt, ...){
         int size = 512;
         char* buffer = 0;

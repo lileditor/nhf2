@@ -9,10 +9,6 @@ Player::Player() {
     balance = DEFAULT_BALANCE;
 }
 
-void Player::freePlayer() {
-    Player::~Player();
-}
-
 Player::Player(const char* n, int b) {
     name = new char[strlen(n) + 1];
     strcpy(name, n);

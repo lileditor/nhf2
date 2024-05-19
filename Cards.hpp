@@ -53,6 +53,10 @@ public:
   virtual ~Card() {}
 };
 
+/**
+ * @brief 
+ * Ez a kártyák alosztája hogy másik print függvényt tartalmazon
+ */
 class Clubs: public Card {
   const char* str[11] = {
     "----------", 
@@ -73,6 +77,10 @@ public:
   ~Clubs() {}
 };
 
+/**
+ * @brief 
+ * Ez a kártyák alosztája hogy másik print függvényt tartalmazon
+ */
 class Diamonds: public Card {
   const char* str[11] = {
     "----------", 
@@ -93,7 +101,10 @@ public:
   ~Diamonds() {}
 };
 
-
+/**
+ * @brief 
+ * Ez a kártyák alosztája hogy másik print függvényt tartalmazon
+ */
 class Hearts: public Card {
   const char* str[11] = {
     "----------", 
@@ -114,6 +125,10 @@ public:
   ~Hearts() {}
 };
 
+/**
+ * @brief 
+ * Ez a kártyák alosztája hogy másik print függvényt tartalmazon
+ */
 class Spades: public Card {
   const char* str[11] = {
     "----------", 
@@ -134,8 +149,19 @@ public:
   ~Spades() {}
 };
 
+/**
+ * @brief 
+ * Ez legenerálja a kártyákat és beleteszi azokat egy tombbe.
+ * @return Card** 
+ */
 Card **generateCards();
 
+/**
+ * @brief 
+ * Ez megkeveri a kártyákat és beleteszi egy vektorba.
+ * @param cards 
+ * @return std::vector <Card*> 
+ */
 std::vector <Card*>  shuffleCards(Card **cards);
 
 #endif
